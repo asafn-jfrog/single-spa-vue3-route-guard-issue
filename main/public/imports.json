@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "vue": "./static/vue/dist/vue.min.js",
+    "vue-router": "./static/vue-router/dist/vue-router.min.js",
+    "single-spa": "./static/single-spa/lib/umd/single-spa.min.js",
+    "client-microfrontend": "http://127.0.0.1:8084/app.umd.js"
+  }
+}
