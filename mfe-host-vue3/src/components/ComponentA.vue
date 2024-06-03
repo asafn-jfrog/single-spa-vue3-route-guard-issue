@@ -1,6 +1,6 @@
 <template>
   <div>
-    Component A
+    Host Vue3 - Component A
   </div>
 </template>
 

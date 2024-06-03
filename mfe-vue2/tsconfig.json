@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "allowJs": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": false,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "webpack-env",
+      "jest"
+    ],
+    "paths": {
+      "@/*": ["src/*"],
+      "@store": ["src/store"],
+      "@store/*": ["src/store/*"],
+      "@cmp": ["src/components"],
+      "@cmp/*": ["src/components/*"],
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@api": ["src/api"],
+      "@api/*": ["src/api/*"],
+      "@shared": ["src/shared"],
+      "@shared/*": ["src/shared/*"],
+      "@containers": ["src/containers"],
+      "@containers/*": ["src/containers/*"],
+      "@constants": ["src/constants"],
+      "@constants/*": ["src/constants/*"],
+      "@types": ["src/types"],
+      "@types/*": ["src/constants/*"],
+      "@views": ["src/views"],
+      "@views/*": ["src/views/*"],
+      "@less": ["src/assets/styles"],
+      "@less/*": ["src/assets/styles/*"],
+      "@img": ["src/assets/images"],
+      "@img/*": ["src/assets/images/*"],
+      "@font": ["src/assets/fonts"],
+      "@font/*": ["src/assets/fonts/*"],
+      "@service": ["src/services"],
+      "@service/*": ["src/services/*"],
+      "@utils": ["src/utils"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

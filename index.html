@@ -14,8 +14,10 @@
     <script type="systemjs-importmap">
       {
         "imports": {
-          "client-microfrontend": "http://127.0.0.1:8420/app.umd.js",
-          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.3/umd/single-spa.min.js"
+          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.3/umd/single-spa.min.js",
+          "mfe-host-vue3": "http://127.0.0.1:8420/app.umd.js",
+          "mfe-vue3": "http://127.0.0.1:8421/app.umd.js",
+          "mfe-vue2": "http://127.0.0.1:8422/app.umd.js"
         }
       }
     </script>
@@ -29,10 +31,24 @@
           var singleSpa = modules[0];
 
           singleSpa.registerApplication(
-            "client-microfrontend",
-            () => System.import("client-microfrontend"),
+            "mfe-host-vue3",
+            () => System.import("mfe-host-vue3"),
             (location) => '/'
           );
+
+          singleSpa.registerApplication({
+            name: 'mfe-vue3',
+            // @ts-ignore
+            app: System.import('mfe-vue3'),
+            activeWhen: '/mfe-vue3'
+          });
+
+          singleSpa.registerApplication({
+            name: 'mfe-vue2',
+            // @ts-ignore
+            app: System.import('mfe-vue2'),
+            activeWhen: '/mfe-vue2'
+          });
 
           singleSpa.start({
             urlRerouteOnly: true,

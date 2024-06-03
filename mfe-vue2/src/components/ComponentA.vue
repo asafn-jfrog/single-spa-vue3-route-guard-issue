@@ -1,12 +1,12 @@
 <template>
   <div>
-    Component B
+    MFE Vue2 Component A
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ComponentB',
+  name: 'ComponentA',
 }
 </script>
 

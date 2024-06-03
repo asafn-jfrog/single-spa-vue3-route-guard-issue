@@ -1,0 +1,28 @@
+{
+  "name": "single-spa-vue3",
+  "version": "1.0.0",
+  "description": "This repository contains a Vue.js microfrontend application",
+  "main": "index.js",
+  "scripts": {
+    "install_all": "concurrently \"npm run install_host_mfe\" \"npm run install_mfe_vue3\" \"npm run install_mfe_vue2\"",
+    "start": "npm run build_all && npm run start_hosting",
+    "start_hosting": "concurrently \"npm run start_main\" \"npm run start_host_mfe\" \"npm run start_mfe_vue3\" \"npm run start_mfe_vue2\"",
+    "build_all": "concurrently \"npm run build_host_mfe\" \"npm run build_mfe_vue3\" \"npm run build_mfe_vue2\"",
+    "build_host_mfe": "cd mfe-host-vue3 && npm run build",
+    "build_mfe_vue3": "cd mfe-vue3 && npm run build",
+    "build_mfe_vue2": "cd mfe-vue2 && npm run build",
+    "start_main": "http-server -P http://localhost:8080?/ .",
+    "start_host_mfe": "http-server -p 8420 ./mfe-host-vue3/dist",
+    "start_mfe_vue3": "http-server -p 8421 ./mfe-vue3/dist",
+    "start_mfe_vue2": "http-server -p 8422 ./mfe-vue2/dist",
+    "install_host_mfe": "cd mfe-host-vue3 && npm install",
+    "install_mfe_vue3": "cd mfe-vue3 && npm install",
+    "install_mfe_vue2": "cd mfe-vue2 && npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1"
+  }
+}
