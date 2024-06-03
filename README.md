@@ -3,6 +3,8 @@
 This repository contains a Vue.js microfrontend application
 
 ## Getting Started
+## to reconstruct the Single-Spa + Vue3 vue-router issue please go to this branch:
+```single-spa-vue-router-issue```
 
 Follow these steps to run the application:
 
